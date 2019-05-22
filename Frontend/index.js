@@ -1,5 +1,15 @@
 // Code your solution here
 const shoeList = document.querySelector('#shoe-list');
+// shoeList.addEventListener('click',function(e){
+//     console.log(e.target);
+//     console.log(e.target)
+//     // currentShoe = shoe;
+//     //         //currentReviews = shoe.reviews;
+//     //         displayShoe();
+//     //         displayReviews();
+// })
+//tie an event listener for its children elements;
+
 const formReview = document.querySelector('#new-review');
 let currentShoe = null;
 
@@ -48,9 +58,12 @@ function displayShoe(){
 function displayReviews(){
     const shoeReviews = document.querySelector('#reviews-list');
     //resets container
-    while (shoeReviews.firstChild) {
-        shoeReviews.removeChild(shoeReviews.firstChild);
-    }
+    // while (shoeReviews.firstChild) {
+    //     shoeReviews.removeChild(shoeReviews.firstChild);
+    // }
+
+    //does the same thing
+    shoeReviews.innerHTML = "";
     fetch(`http://localhost:3000/shoes/${currentShoe.id}`)
     .then(resp => resp.json())
     .then(shoe => {
@@ -77,6 +90,8 @@ function createShoeElements(data){
         let li = document.createElement('li');
         li.className = "list-group-item";
         li.innerText = shoe.name;
+        //li.setAttribute('element', shoe)
+        
         li.addEventListener('click',function(){
             currentShoe = shoe;
             //currentReviews = shoe.reviews;
