@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // DONE! Let's now write a method that will iterate over all the reviews of the given shoe
   function getReviews(shoe) {
+    reviewContainer.style.listStyleType = "none";
     return shoe.reviews.map(r => `<li id="shoe-${shoe.id}"> ${r.content} </li>`).join("")
   }
 
@@ -87,6 +88,4 @@ document.addEventListener("DOMContentLoaded", () => {
   function slapItOnTheDOM(reviewContent, shoe){
     reviewContainer.innerHTML += `<li id="shoe-${shoe.id}"> ${reviewContent} </li>`
   }
-
-
 })

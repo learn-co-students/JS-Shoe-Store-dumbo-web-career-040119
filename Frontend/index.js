@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getReviews(shoe) {
+    reviewContainer.style.listStyleType = "none";
     return shoe.reviews.map(r => `<li id="shoe-${shoe.id}"> ${r.content} </li>`).join("")
   }
 
@@ -73,6 +74,4 @@ document.addEventListener("DOMContentLoaded", () => {
   function slapItOnTheDOM(reviewContent, shoe){
     reviewContainer.innerHTML += `<li id="shoe-${shoe.id}"> ${reviewContent} </li>`
   }
-
-
 })
