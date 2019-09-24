@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetch(URL)
     .then(response => response.json())
-    .then(shoes => shoes.forEach(sideBar))
+    .then(shoes => shoes.forEach(listShoes))
 
-  function sideBar(shoe) {
+  function listShoes(shoe) {
     const sideBar = document.querySelector('.list-group')
     const shoeCollLength = document.querySelectorAll('.list-group-item')
 
